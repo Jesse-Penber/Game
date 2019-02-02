@@ -1,0 +1,90 @@
+$(document).ready(function() {
+
+function owner(name, experience, pattingability, pattingcooldown) {
+		this.name = name;
+		this.experience = experience;
+		this.pattingability = pattingability;
+		
+		//whether owner is on cooldown after using Pat ability
+		this.pattingcooldown = pattingcooldown;
+}	
+
+function dog(name, breed, mood, headSlot, tailSlot) {
+		this.name = name;
+		this.breed = breed;
+		this.mood = mood;
+		
+		this.headSlot = headSlot;
+		this.tailSlot = tailSlot;
+}
+
+var dogslotnames = ["Head", "Tail"];
+
+function inventory(item1, item2, item3) {
+	this.item1 = item1;
+	this.item2 = item2;
+	this.item3 = item3;
+}
+
+var mouseX;
+var mouseY;
+$(document).mousemove(function(e) {
+	mouseX = e.pageX;
+	mouseY = e.pageY;
+});
+
+function patdog(dog, owner) {
+	dog.mood = "wiggly";
+	owner.pattingability ++;
+}
+
+function tapetohead(item, dog) {
+	if(dog.headSlot != '') {
+		console.log("The dog already has something taped to its head");
+	} else {
+	dog.headSlot = item;
+	console.log(dog.name + " now has " + dog.headSlot + " taped to its head");
+	}
+}
+
+function tapetotail(item, dog) {
+	if(dog.tailSlot != '') {
+		console.log("The dog already has something taped to its tail");
+	} else {
+	dog.tailSlot = item;
+	console.log(dog.name + " now has " + dog.tailSlot + " taped to its tail");
+}
+}
+
+function removefromtail(dog) {
+	if(dog.tailSlot == '') {
+		console.log("The dog doesn't have anything on its tail");
+	} else {
+		console.log("You removed the item from the dog's tail");
+		dog.tailSlot= '';
+	}
+}
+
+function removefromhead(dog) {
+	if(dog.headSlot == '') {
+		console.log("The dog doesn't have anything on its head");
+	} else {
+		console.log("You removed the item from the dog's head");
+		dog.headSlot = '';
+	}
+}
+
+var owner1 = new owner('Jesse', 0, 0, false);
+var dog1 = new dog('Gud Boi', 'Corg', 'neutral', '', '');
+var inventory1 = new inventory('a spoon', 'a lamp', 'wings');
+patdog(dog1, owner1);
+tapetohead(inventory1.item1, dog1);
+tapetohead(inventory1.item1, dog1);
+tapetotail(inventory1.item2, dog1);
+tapetotail(inventory1.item3, dog1);
+removefromtail(dog1);
+removefromtail(dog1);
+removefromhead(dog1);
+removefromhead(dog1);
+
+});

@@ -1,10 +1,9 @@
-function owner(name, experience, pattingability, pattingcooldown) {
+function owner(name, experience, pattingability, pattingcooldown, level) {
 		this.name = name;
 		this.experience = experience;
 		this.pattingability = pattingability;
-		
-		//whether owner is on cooldown after using Pat ability
 		this.pattingcooldown = pattingcooldown;
+		this.level = level;
 }	
 
 function dog(name, breed, mood, headSlot, tailSlot) {
@@ -14,6 +13,10 @@ function dog(name, breed, mood, headSlot, tailSlot) {
 		
 		this.headSlot = headSlot;
 		this.tailSlot = tailSlot;
+		
+		this.bork = function() {
+			console.log(name + " borks!");
+		}
 }
 
 function inventory(item1, item2, item3) {
@@ -24,10 +27,12 @@ function inventory(item1, item2, item3) {
 
 function patdog(dog, owner) {
 	dog.mood = "wiggly";
+	dog.bork();
 	owner.pattingability ++;
+	//add setTimeOut(function() {document.getElementById("").disabled = false;}, 200000); to disable the Pat button 
+	//load dog smile pic with timeout same as Pat disable
 }
 
-//working
 function tapetohead(item, dog) {
 	if(dog.headSlot != '') {
 		console.log("The dog already has something taped to its head");
@@ -43,7 +48,6 @@ function tapetohead(item, dog) {
 }
 
 
-//working
 function removefromhead(dog) {
 	var itemOnHead = dog.headSlot;
 	if(itemOnHead == '') {
@@ -79,8 +83,7 @@ function removefromtail(dog) {
 		var firstEmptySlot = checkForEmptyInventorySlot(inventory1);
 		inventory1[firstEmptySlot] = itemOnTail;
 		dog.tailSlot = '';
-		console.log("You removed the " + itemOnTail + " from the dog's tail");
-		
+		console.log("You removed the " + itemOnTail + " from the dog's tail");	
 	}
 }
 
@@ -92,9 +95,16 @@ function getKeyByValue(object, value) {
 	  return Object.keys(object).find(key => object[key] === value);
 	}
 
+function checkOwnerLevel() {
+	if(owner1.pattingability > 9) {
+		owner1.pattingability = 0;
+		owner1.level++;
+		console.log("You leveled up! Good patting!")
+	}
+}
 
 //main method 
-//tested scenarios with head and tail: adding '' item slot, adding item to body part already occupied
+//setInterval(checkOwnerLevel, 20000);
 var owner1 = new owner('Jesse', 0, 0, false);
 var dog1 = new dog('Gud Boi', 'Corg', 'neutral', '', '');
 var inventory1 = new inventory('a spoon', 'a lamp', 'wings');

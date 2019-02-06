@@ -1,9 +1,4 @@
-const canvas1 = document.getElementById('inventoryID');
-const canvas2 = canvas1.getContext('2d');
-canvas2.fillStyle = '#000';
-canvas2.filLRect(0, 0, canvas.width, canvas.height);
-
-unction owner(name, experience, pattingability, pattingcooldown, level) {
+function owner(name, experience, pattingability, pattingcooldown, level) {
 		this.name = name;
 		this.experience = experience;
 		this.pattingability = pattingability;

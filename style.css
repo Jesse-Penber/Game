@@ -1,0 +1,83 @@
+#ownerlevel {
+  height: 20px;
+  width: 130px;
+  background-color: #F0E2BD;
+  position: absolute;
+  top: 40px;
+  left: 350px;
+}
+
+#dogName {
+	height: 20px;
+  width: 130px;
+  background-color: #F0E2BD;
+  position: absolute;
+  top: 70px;
+  left: 180px;
+	}
+
+#dogHead {
+	height: 40px;
+  width: 120px;
+  background-color: #B4E9A1;
+  position: absolute;
+  top: 120px;
+  left: 200px;
+}
+
+#dogPic {
+	height: 120px;
+  width: 220px;
+  background-color: #A1D1E9;
+  position: absolute;
+  top: 160px;
+  left: 100px;
+	}
+
+#dogSmile {
+	
+	}
+	
+#dogTail {
+	height: 120px;
+  width: 30px;
+  background-color: #A4A1E9;
+  position: absolute;
+  top: 160px;
+  left: 70px;
+}
+
+#patDog {
+	height: 20px;
+  width: 130px;
+  position: absolute;
+  top: 70px;
+  left: 350px;
+}
+
+#slot1 {
+  height: 50px;
+  width: 50px;
+  background-color: #99DBB8;
+  position: absolute;	
+  left: 30px;
+  bottom: 70px;
+}
+
+#slot2 {
+  height: 50px;
+  width: 50px;
+  background-color: #D299DB;
+  position: absolute;
+  left: 130px;
+  bottom: 70px;
+}
+
+#slot3 {
+  height: 50px;
+  width: 50px;
+  background-color: #DBDB99;
+  position: absolute;	
+  left: 230px;	
+  bottom: 70px;
+}

@@ -4,6 +4,10 @@ function owner(name, experience, pattingability, pattingcooldown, level) {
 		this.pattingability = pattingability;
 		this.pattingcooldown = pattingcooldown;
 		this.level = level;
+
+this.displayOwnerLevel = function() {
+		ownerlevel.innerHTML = "Your level: " +  this.level;
+}
 }	
 
 function dog(name, breed, mood, headSlot, tailSlot) {
@@ -17,6 +21,10 @@ function dog(name, breed, mood, headSlot, tailSlot) {
 		this.bork = function() {
 			console.log(name + " borks!");
 		}
+		
+		this.displayDogDetails = function() {
+		dogName.innerHTML = this.name;
+		}
 }
 
 function inventory(item1, item2, item3) {
@@ -26,9 +34,11 @@ function inventory(item1, item2, item3) {
 }
 
 function patdog(dog, owner) {
+	
 	dog.mood = "wiggly";
 	dog.bork();
 	owner.pattingability ++;
+	document.getElementById("patDog").style.borderColor = "red";
 	//add setTimeOut(function() {document.getElementById("").disabled = false;}, 200000); to disable the Pat button 
 	//load dog smile pic with timeout same as Pat disable
 }
@@ -105,12 +115,15 @@ function checkOwnerLevel() {
 
 //main method 
 //setInterval(checkOwnerLevel, 20000);
-var owner1 = new owner('Jesse', 0, 0, false);
+var owner1 = new owner('Jesse', 0, 0, false, 0);
 var dog1 = new dog('Gud Boi', 'Corg', 'neutral', '', '');
 var inventory1 = new inventory('a spoon', 'a lamp', 'wings');
-patdog(dog1, owner1);
-tapetotail(inventory1.item1, dog1);
-tapetohead(inventory1.item1, dog1);
-removefromtail(dog1);
-tapetohead(inventory1.item1, dog1);
-removefromhead(dog1);
+
+//patdog(dog1, owner1);
+dog1.displayDogDetails();
+owner1.displayOwnerLevel();
+//tapetotail(inventory1.item1, dog1);
+//tapetohead(inventory1.item1, dog1);
+//removefromtail(dog1);
+//tapetohead(inventory1.item1, dog1);
+//removefromhead(dog1);

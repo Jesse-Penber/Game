@@ -6,24 +6,32 @@
 <body>
 <div class="main">
 <h1> Tape Stuff To Your Dog!</h1>
-<div class="owner" id="ownerID">
-<span id="ownerlevel">Your Patting Level</span>
-</div>
+<table class="owner" id="ownerID">
+<tr>
+<td id="ownerlevel"></td>
+</tr>
+</table>
 
 <div class="dog" id="dogID">
-<span id="dogPic">This is a picture of a dog</span>
-<span id="dogSmile">If the dog is wiggly there's a smiley here</span>
-<span id="dogHead">This is what's on the dog's head</span>
-<span id="dogTail">This is what's on the dog's tail</span>
-<span id="dogName">DOG NAME</span>
-<span id="petDog">Click to pet!</span>
+<table id="dogstats">
+<tr>
+<td id="dogName"></td>
+<td id="dogHead">This is what's on the dog's head</td>
+<td id="dogPic">This is a picture of a dog</td>
+<td id="dogTail">This is what's on the dog's tail</td>
+</tr>
+</table>
+<button id="patDog">Pat The Dog!</button>
 </div>
 
-<div class="inventory" id="inventoryID">
-<span id="slot1">Inventory Slot 1</span>
-<span id="slot2">Inventory Slot 2</span>
-<span id="slot3">Inventory Slot 3</span>
+<table class="inventory" id="inventoryID">
+<tr>
+<td id="slot1" img>Inventory Slot 1</td>
+<td id="slot2">Inventory Slot 2</td>
+<td id="slot3">Inventory Slot 3</td>
+</tr>
+</table>
 </div>
 </body>
-<script src="tapethingstoyourdog.js" charset="utf-8"></script>
+<script src="tapethingstoyourdog.js"></script>
 </html>
